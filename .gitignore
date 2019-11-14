@@ -1,0 +1,7 @@
+tmp/
+temp
+.vscode
+storage
+vendor
+.env
+node_modules/
