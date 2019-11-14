@@ -61,7 +61,7 @@ const executeAudioTest = async (page, audioTranscrito) => {
 }
 (async () => {
     puppeteer.use(require("puppeteer-extra-plugin-stealth")())
-    const browser = await puppeteer.launch({headless: false, args: [
+    const browser = await puppeteer.launch({headless: true, args: [
         '--disable-web-security', '--incognito',  '--no-sandbox'], slowMo: 10})
     try {
       const userAgent = [
@@ -124,7 +124,7 @@ const executeAudioTest = async (page, audioTranscrito) => {
             await executeAudioTest(page, textAudio)
             await page.waitFor(1500);
         }
-
+        await page.screenshot({path: './captcha.png'})
         await browser.close();
     }catch(e) {
         console.log(e)
