@@ -61,7 +61,7 @@ const executeAudioTest = async (page, audioTranscrito) => {
 }
 (async () => {
     puppeteer.use(require("puppeteer-extra-plugin-stealth")())
-    const browser = await puppeteer.launch({headless: true, args: [
+    const browser = await puppeteer.launch({headless: false, args: [
         '--disable-web-security', '--incognito',  '--no-sandbox'], slowMo: 10})
     try {
       const userAgent = [
